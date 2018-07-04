@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>layout HTML5</title>
+    <style type="text/css">
+        /* reset trinh duyet */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .clear{
+            clear: both;
+        }
+
+        /* css for header */
+        header{
+            width: 100%;
+            height: 120px;
+            background-color: black;
+        }
+        header div.logo{
+            width: 30%;
+            height: 100%;
+            background: #ccc;
+            float: left;
+        }
+        header div.banner {
+            width: 70%;
+            height: 100%;
+            background-color: yellow;
+            float: left;
+        }
+        header h3 {
+            text-align: center;
+            padding: 40px 0px;
+        }
+        /* end header */
+
+        /* css for nav */
+        nav{
+            width: 100%;
+            height: 80px;
+            background-color: blue;
+        }
+        nav ul {
+            text-align: center;
+            list-style: none;
+            padding-top: 10px;
+        }
+        nav ul li {
+            display: inline-block;
+            line-height: 40px;
+            padding: 5px 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        /* end css nav */
+
+        /* css for main */
+        main{
+            width: 100%;
+            min-height: 700px;
+        }
+        section{
+            width: 80%;
+            height: 700px;
+            background-color: green;
+            float: left;
+        }
+        aside{
+            width: 20%;
+            height: 700px;
+            background-color: violet;
+            float: left;
+        }
+        main div.primary{
+            width: 100%;
+            height: 70%;
+            background-color: silver;
+        }
+        main article{
+            width: 100%;
+            height: 30%;
+            background-color: orange;
+        }
+        main h3 {
+            text-align: center;
+            padding: 50px 0px;
+        }
+        /* end main */
+        /* css for footer */
+        footer{
+            width: 100%;
+            background-color: black;
+            height: 200px;
+        }
+        footer h3 {
+            text-align:  center;
+            padding: 50px 0px;
+            color:  white;
+        }
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <!-- logo -->
+        <div class="logo">
+            <h3>This is logo</h3>
+        </div>
+        <!-- ./logo -->
+        <!-- banner -->
+        <div class="banner">
+            <h3>This is banner</h3>
+        </div>
+        <!-- ./banner -->
+    </header>
+    <!-- ./header -->
+
+    <div class="clear"></div>
+
+    <!-- nav -->
+    <nav>
+        <ul>
+            <li><a href="#" title="Home">Home</a></li>
+            <li><a href="#" title="About">About</a></li>
+            <li><a href="#" title="Contact">Contact</a></li>
+            <li><a href="#" title="Products">Products</a></li>
+        </ul>
+    </nav>
+    <!-- ./nav -->
+
+    <!-- main -->
+    <main>
+        <!-- content left -->
+        <section>
+            <div class="primary">
+                <h3>This is main content</h3>
+            </div>
+            <article>
+                <h3>This is article </h3>
+            </article>
+        </section>
+        <!-- ./content left -->
+        <!-- aside -->
+        <aside>
+            <h3>This is aside</h3>
+        </aside>
+        <!-- ./aside -->
+    </main>
+    <!-- ./main -->
+
+    <!-- footer -->
+    <footer>
+        <h3>This is footer</h3>
+    </footer>
+    <!-- ./footer -->
+</body>
+</html>

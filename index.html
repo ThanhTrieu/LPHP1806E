@@ -168,11 +168,86 @@
         <!-- html hinh anh -->
         <img width="500" height="500" src="images/demo.jpg" alt="cau thu messi, cau thu nay da" title="cau thu messi" />
         <!-- html video -->
-        <video width="500" height="500" src="videos/myvideo.mp4" autobuffer autoloop controls poster="images/demo.jpg"></video>
+        <video width="500" height="500" src="videos/myvideo.mp4" autoplay="autoplay" autobuffer autoloop controls poster="images/demo.jpg"></video>
         <!-- html audio -->
-        <audio src="audios/comuangangqua.mp3" autobuffer autoloop loop controls></audio>
+        <audio  src="audios/comuangangqua.mp3" autoplay="autoplay" autobuffer autoloop loop controls></audio>
         <!-- html flash -->
         <embed src="images/demo.jpg"></embed>
+        <!-- html plugins -->
+        <object data="images/demo.jpg" width="300" height="300">
+        </object>
+        <!-- html iframe / html youte -->
+        <!-- <iframe src="http://vnexpress.net/" width="500" height="300"></iframe>
+        <br><br>
+        <iframe src="https://www.youtube.com/embeb/bG8aO_69reM"></iframe> -->
+        <!-- html graphic / do hoa -->
+        <canvas id="myCanvas" width="500" height="500" style="border: 1px solid red;"></canvas>
+        <script type="text/javascript">
+            // can truy cap vao the canvas
+            var canvas = document.getElementById('myCanvas');
+            // thiet lap che do - do hoa 2d
+            var ctx = canvas.getContext('2d');
+            // di thuc hanh thiet lap cac hinh hoa co so
+            // ve duong thang
+            // xac dinh toa do diem bat dau
+            ctx.moveTo(100,100);
+            // xac dinh toa do diem ket thuc
+            ctx.lineTo(250,250);
+            // xac dinh do day(dam-nhat) cua duong thang
+            ctx.lineWidth = 5;
+            // xac dinh mau sac cho duong thang
+            ctx.strokeStyle = 'blue';
+            // thuc thi ve duong thang
+            ctx.stroke();
+            // thuc thi 1 lenh do hoa tiep theo
+            ctx.beginPath();
 
+            ctx.moveTo(5,100);
+            // xac dinh toa do diem ket thuc
+            ctx.lineTo(150,250);
+            // xac dinh do day(dam-nhat) cua duong thang
+            ctx.lineWidth = 5;
+            // xac dinh mau sac cho duong thang
+            ctx.strokeStyle = 'yellow';
+            // thuc thi ve duong thang
+            ctx.stroke();
+
+            ctx.beginPath();
+            // tao hieu ung chu nghe thuat
+            // thiet lap font chu
+            ctx.font = 'italic 40pt tahoma';
+            // can le
+            ctx.textAlign = 'center';
+            // tao mau sac
+            ctx.fillStyle = 'pink';
+            // ve chu - tao chu
+            ctx.fillText('LPHP1806E', 240, 100);
+
+            ctx.beginPath();
+            // ve hinh tu giac - HCN
+            ctx.rect(120,150, 200,250);
+            // to mau cho hinh
+            ctx.fillStyle = 'violet';
+            // do mau
+            ctx.fill();
+            // tao do dam nhat cho duong vien cua tu giac
+            ctx.lineWidth = 3;
+            // tao mau sac cho duong vien
+            ctx.strokeStyle = 'green';
+            // ve noi cac duong thang
+            ctx.stroke();
+
+            ctx.beginPath();
+            // ve duong tron
+            ctx.arc(100,100, 50, 90, 270, true);
+            // to mau cho hinh
+            ctx.fillStyle = 'gray';
+            // do mau
+            ctx.fill();
+            ctx.strokeStyle = 'blue';
+            // ve noi cac cung duong trong
+            ctx.stroke();
+
+        </script>
     </body>
 </html>

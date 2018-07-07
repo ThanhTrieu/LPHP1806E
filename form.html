@@ -4,10 +4,50 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>HTML Form</title>
+    <style type="text/css">
+        /* css nt */
+    </style>
+    <link rel="stylesheet" type="text/css" href="">
 </head>
 <body>
-    <form id="" name="" class="" action="" method="POST/GET" enctype="multipart/form-data">
+    <form id="" name="" class="" action="" method="POST" enctype="multipart/form-data">
+        <!-- cac the input -->
+        <input type="text" name="user" id="user" class="user" value="" placeholder="moi nhap ho ten" required="required" minlength="3" maxlength="6" />
+        <br><br>
+        <input style="" type="email" name="email" disabled="disabled" />
+        <br> <br>
+        <input type="url" name="url" />
+        <br><br>
+        <input type="number" name="number" />
+        <br><br>
+        <input type="color" name="color" />
+        <br><br>
+        <input type="date" name="date" />
+        <input type="month" name="month" />
+        <input type="week" name="week" />
+        <br><br>
+        <textarea name="des" cols="30" rows="5">
+            cho nguoi dung nhap du lieu tren nhieu dong
+        </textarea>
+        <br><br>
+        <select name="gender">
+            <option value="1"> Nam</option>
+            <option value="0" selected="selected"> Nu</option>
+        </select>
+        <br><br>
+        <label for="agree">toi dong y voi quy dinh cua dien dan</label>
+        <input checked="checked" type="checkbox" name="agree" id="agree" value="12345" />
+        <br><br>
+        <label for="on">on</label>
+        <input type="radio" id="on" name="on-off" checked="checked" />
 
+        <label for="off">off</label>
+        <input type="radio" id="off" name="on-off" value="123" />
+        <br><br>
+        <button type="button" name="click"> Click me</button>
+        <input type="button" name="ck2" value="click me 2">
+        <br><br>
+        <button type="submit" name="btnSub"> Send data</button>
     </form>
 </body>
 </html>

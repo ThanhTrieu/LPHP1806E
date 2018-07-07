@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#mytitle{
+    color: yellow !important;
+}
+
+.mytitle{
+    color: blue;
+}
+
+h3 {
+    color: red !important;
+}
+.form{
+     border: 1px solid pink;
+}
+input[name] {
+    border: 1px solid red;
+}
+input[class*='for']{
+    border: 1px solid green;
+}
+input[class='form']{
+    border: 1px solid yellow;
+}
+input[class^='f']{
+    border: 1px solid yellow;
+}

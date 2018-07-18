@@ -1,0 +1,113 @@
+body{
+
+}
+div.box + div.content {
+    width: 300px;
+    height: 300px;
+    border: 1px solid red;
+}
+
+div.box ~ div.main {
+    width: 300px;
+    height: 300px;
+    border: 1px solid blue;
+}
+div.box ~ div.main + input[type='text'] {
+    border : 2px solid yellow;
+}
+
+div.box > div.box-1 > h4 {
+    color: pink;
+}
+
+div.box  div.box-1 > h4 {
+    color:  orange;
+}
+
+div.box, div.main, div.content {
+    width: 500px;
+    height: 500px;
+    border: 1px solid #ccc;
+}
+div.box ~ div.content + div.main > div.text div.chid > button[type='button'] {
+
+}
+/*
+div.a > div.b + div.c > div.d ~ div.e
+ */
+div.pseudo :first-child{
+    color: green;
+}
+
+div.pseudo :first-of-type {
+    color: blue;
+}
+div.pseudo :last-child {
+    color: violet;
+}
+div.pseudo :last-of-type {
+    color: yellow;
+}
+
+div.pseudo :nth-last-child(3) {
+    color: red;
+}
+div.pseudo :nth-last-of-type(3) {
+    color: silver;
+}
+
+div.pseudo :nth-child(3) {
+    color: orange;
+}
+div.pseudo :nth-of-type(3){
+    color: brown;
+}
+div.pseudo-2 :only-child{
+    color: green;
+}
+div.pseudo-3 input[type='text']:focus {
+    width: 500px;
+    height: 30px;
+    border: 2px solid red;
+}
+div.pseudo-3 input[type='checkbox']:checked{
+    width: 200px;
+    height: 200px;
+    /* border: 2px solid red; */
+}
+div.pseudo-3 a:link {
+    color: violet;
+}
+
+div.pseudo-3 a:visited {
+    color: yellow;
+}
+
+div.pseudo-3 a:active {
+    color: green;
+}
+/* div.pseudo-3 a:hover {
+    color: blue;
+} */
+div.pseudo-3:hover{
+    width: 200px;
+    height: 200px;
+    border: 1px solid blue;
+}
+div.elements p::first-letter {
+    color: red;
+    font-size: 20px;
+}
+div.elements p::first-line {
+    color:  green;
+}
+div.elements p::before {
+    content: "PHP 1806E";
+}
+div.elements p::after {
+    content: url('../images/demo.jpg');
+}
+div.elements p::selection{
+    color: yellow;
+}
+

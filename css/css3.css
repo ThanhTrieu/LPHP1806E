@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: tahoma;
+}
+/* p {
+    font-size: 100px;
+    font-weight: bolder;
+    direction: rtl;
+} */
+h4 {
+    text-shadow: blue 10px 5px 5px;
+}
+div.content {
+    width: 900px;
+    height: 900px;
+    border: 3px dotted red;
+    /* to mau nen */
+    /* background-color: pink; */
+    /* chen anh nen*/
+    /* background-image: url('../images/demo.jpg'); */
+    /* thiet che do lap cua anh nen*/
+    /* background-repeat: no-repeat; */
+    /* background-repeat: repeat-x; */
+    /* background-repeat: repeat-y; */
+    /* background-repeat: repeat; */
+    /* thiet lap vi tri hien thi cua anh nen */
+    /* background-position: center center;
+    background-attachment: scroll; */
+   /*  background-attachment: fixed; */
+   /* background-size: 300px 300px; */
+   /* background-size: 100% 100%; */
+   /* background-size: cover; */
+   /* background: pink url('../images/demo.jpg') no-repeat center center fixed;
+   background-size: cover; */
+}
+div.content h5{
+    /* padding-top: 50px;
+    padding-left: 20px; */
+    margin-top: 50px;
+    margin-left: 20px;
+}
+div.box{
+    border: 1px solid blue;
+    margin-top: 50px;
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+}
+div.block a {
+    display: block;
+    display: list-item;
+    text-decoration: none;
+    /* list-style:; */
+}
+div.block {
+    border: 1px solid red;
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+}
+div.col-1, div.col-2, div.col-3 {
+    width: 200px;
+    height: 200px;
+    border: 1px dotted red;
+    float: right;
+}
+.clear{
+    clear: both;
+}

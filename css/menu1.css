@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body{
+    font-family: tahoma;
+}
+div.container{
+    width: 100%;
+    min-height: 800px;
+}
+nav{
+    width: 250px;
+    background-color: pink;
+    margin-left: 50px;
+}
+div.container nav ul li {
+    list-style: none;
+    border-bottom: 1px solid red;
+    padding: 10px 5px;
+    position: relative;
+}
+div.container nav ul li:last-child{
+    border: none;
+}
+div.container nav ul li:hover{
+    background-color: black;
+}
+
+/* hover qua the li va tac dong vao the a*/
+div.container nav ul li:hover a {
+    color: white;
+}
+div.container nav ul li a {
+    text-decoration: none;
+}
+div.container nav ul li a:hover{
+    color: red;
+}
+/* CSS menu dropdown*/
+div.container nav ul li ul.dropdown {
+    display: none;
+    position: absolute;
+    width: 250px;
+    left: 250px;
+    top: 0px;
+    background-color: pink;
+    border-left: 1px solid red;
+}
+/* hover qua the li va tac dong vao the ul co class la dropdown */
+div.container nav ul li:hover ul.dropdown{
+    display: block;
+}
+div.container nav ul li:hover ul.dropdown li a {
+    color: blue;
+}
+/* CSS menu dropdown cap 3*/
+div.container nav ul li ul.dropdown li > ul.dropdown {
+    display: none;
+}
+div.container nav ul li ul.dropdown li:hover > ul.dropdown{
+    display: block;
+}

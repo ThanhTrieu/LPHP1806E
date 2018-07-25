@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+nav {
+    width: 100%;
+    background-color: #4267b2;
+}
+nav ul {
+    text-align: center;
+}
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    line-height: 40px;
+    padding: 0px 12px;
+    border-right: 1px solid white;
+    margin-left: -4px;
+    position: relative;
+}
+nav ul li:last-child{
+    border: none;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+nav ul li:hover {
+    background-color: black;
+}
+nav ul li:hover a {
+    color: red;
+}
+/* CSS Menu Dropdown*/
+nav ul li ul.dropdown{
+    display: none;
+    /* width: 200px; */
+    position: absolute;
+    background-color: #4267b2;
+    top: 40px;
+    left: 0px;
+}
+nav ul li ul.dropdown li {
+    border-right: none;
+    border-bottom: 1px solid red;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 200px;
+}
+nav ul li ul.dropdown li a {
+    color: white;
+    text-align: left;
+}
+nav ul li:hover ul.dropdown {
+    display: block;
+}

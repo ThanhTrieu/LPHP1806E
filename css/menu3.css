@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body {
+    font-family: 'Great Vibes', cursive;
+}
+nav {
+    width: 100%;
+    background-color: #323031;
+}
+nav ul {
+    text-align: center;
+}
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    line-height: 40px;
+    padding: 0px 10px;
+    position: relative;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+/* Css menu table */
+nav ul li div.menu-table {
+    display: none;
+    position: absolute;
+    background-color: #323031;
+    width: 320px;
+    top: 40px;
+    left: 0px;
+    /* border-radius: 5px; */
+}
+nav ul li:hover div.menu-table {
+    display: block;
+}
+nav ul li:hover div.menu-table ul{
+    display: table-row;
+}
+nav ul li:hover div.menu-table ul li {
+    display: table-cell;
+}

@@ -40,25 +40,32 @@ div.container nav ul li a:hover{
 }
 /* CSS menu dropdown*/
 div.container nav ul li ul.dropdown {
-    display: none;
-    position: absolute;
+    /* display: none; */
+    opacity: 0;
     width: 250px;
     left: 250px;
     top: 0px;
     background-color: pink;
     border-left: 1px solid red;
+    transition: all 3s ease 0s;
+    position: absolute;
+
 }
 /* hover qua the li va tac dong vao the ul co class la dropdown */
 div.container nav ul li:hover ul.dropdown{
-    display: block;
+    /* display: block; */
+    opacity: 1;
 }
 div.container nav ul li:hover ul.dropdown li a {
     color: blue;
 }
 /* CSS menu dropdown cap 3*/
 div.container nav ul li ul.dropdown li > ul.dropdown {
-    display: none;
+    /* display: none; */
+    opacity: 0;
+    transition: all 3s ease 0s;
 }
 div.container nav ul li ul.dropdown li:hover > ul.dropdown{
-    display: block;
+    /* display: block; */
+    opacity: 1;
 }

@@ -158,3 +158,15 @@ for(let i = 0; i < totalEl; i++){
     }
 }
 console.log(count);
+// dung forEach(): nameArr.forEach()
+// arr4.forEach(function(item, index, array){
+// // callback funtion cua forEach
+//     console.log(item, index);
+// });
+
+for(let m of arr4) {
+    console.log(m);
+    // m : gia tri cua phan tu nam trong mang
+    // arr4[m] : key - chi so cua phan tu
+}
+

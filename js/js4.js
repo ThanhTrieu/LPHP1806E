@@ -75,3 +75,56 @@ function PTBH(a,b,c){
         }
     }
 }
+
+
+let numberText = prompt('Moi ban nhap so');
+console.log(numberText);
+console.log(typeof(numberText));
+
+function checkNumber(num){
+    this.myNumber = num;
+    this.check = function(){
+        if(this.myNumber % 2 == 0){
+            return true;
+        }
+        return false;
+    }
+}
+//numberText = Number.isInteger(numberText); // kiem tra co phai la so
+numberText = Number.parseInt(numberText); // ep ve kieu so nguyen
+console.log(typeof(numberText));
+
+let myTest = new checkNumber(numberText);
+let res = myTest.check();
+
+if(res){
+    console.log(`${numberText} la so chan`);
+} else {
+    console.log(`${numberText} la so le`);
+}
+
+let year  = prompt('Moi nhap nam');
+
+function checkYear(y){
+    // khai bao thuoc tinh
+    this.year = y;
+    this.myCheckYear = function(){
+        // giai quyet van de o day
+        // kiem tra this.year la nam nhuan hay ko
+        if(this.year % 400 == 0){
+            return true;
+        } else if(this.year % 4 == 0 && this.year % 100 != 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+year = Number.parseInt(year);
+let myYear = new checkYear(year);
+let myRes = myYear.myCheckYear();
+if(myRes){
+    console.log(`${year} la nam nhuan`);
+} else {
+    console.log(`${year} la so ko nhuan`);
+}

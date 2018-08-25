@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JS Events</title>
+    <style type="text/css">
+        .mybutton{
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body onerror="myError();" onload="myLoad();" onresize="myResize(this);">
+    <h1>JS Events</h1>
+    <!-- dinh nghia su kien js trong phan tu HTML -->
+    <!-- hello(): goi la ham trong js -->
+    <button type="button" onclick="hello();">Click me</button>
+    <br>
+    <input type="text" onblur="myOnBlur();" >
+    <br>
+    <input type="text" onfocus="myOnfocus();" onblur="myOnBlur();" onchange="myChange(this);">
+    <br>
+    <select onchange="myChange(this)">
+        <option value="0">Nam</option>
+        <option value="1">Nu</option>
+    </select>
+    <br>
+    <button type="button" ondblclick="myDbClick();"> DB Click</button>
+    <br><br>
+    <input type="text" onkeydown="myKeyDown();" onkeypress="myKeyPress();" onkeyup="myKeyUp();">
+    <br><br>
+    <button type="button" onmousedown="myMouseDown();" onmouseup="myMouseUp();"> Mouse down</button>
+    <br><br>
+    <div style="width: 200px;height: 200px; border:1px solid red;" onmousemove="myMouseMove();">
+    </div>
+    <br><br>
+
+    <img src="images/demo.jpg" alt="" width="150" height="150" onmouseover="myMouseOver(this);" onmouseout="myMouseOut(this);">
+    <br><br>
+    <textarea onselect="mySelect(this);" rows="10" cols="58">
+    </textarea>
+    <br><br><br>
+
+    <button type="button" id="bt" class="bt mybutton"> button </button>
+    <h2>LPHP1806E - JS</h2>
+    <br><br>
+    <textarea rows="10" cols="60" id="myTextarea">
+
+    </textarea>
+    <p id="myData"></p>
+    <br><br>
+
+    <form>
+        <label for="username">Username</label>
+        <input type="text" id="username">
+        <br><br>
+        <label for="password">password</label>
+        <input type="password" id="password">
+        <br><br>
+        <button type="button" id="login"> login</button>
+    </form>
+
+    <script type="text/javascript">
+        document.getElementById('login').addEventListener('click',function(){
+            // kiem tra xem nguoi dung nhap dl vao cac o text chua?
+            let user = document.getElementById('username').value;
+            let pass = document.getElementById('password').value;
+            let chkUser;
+            let chkPass
+
+            if(user == ''){
+                document.getElementById('username').style.border = '1px solid red';
+                chkUser = false;
+            } else {
+                document.getElementById('username').style.border = '';
+                chkUser = true;
+            }
+
+            if(pass == ''){
+                chkPass = false;
+                document.getElementById('password').style.border = '1px solid red';
+            } else {
+                chkPass = true;
+                document.getElementById('password').style.border = '';
+            }
+
+            if(chkUser && chkPass){
+                console.log('Yes');
+            } else {
+                alert('Kiem tra lai du lieu')
+            }
+            return false;
+        });
+        // chung ta can truy cap vao thanh html nao do thong qua DOM Element trong JS
+        let myBtn = document.getElementById('bt');
+        console.log(myBtn);
+        let myBtn2 = document.getElementsByTagName('button');
+        console.log(myBtn2[3]);
+        let myBtn3 = document.getElementsByClassName('bt');
+        console.log(myBtn3[0]);
+        let myBtn4 = document.querySelectorAll('.mybutton');
+        console.log(myBtn4[0]);
+
+        myBtn4[0].onclick = function(){
+            console.log('This is test');
+            //let text = document.getElementsByTagName('h2');
+            //let data = text[0].innerHTML;
+            //alert(data);
+            let text = document.getElementsByTagName('h2')[0].innerHTML = 'LPHP1806E - PHP';
+            //alert(text);
+            document.getElementsByTagName('div')[0].style.backgroundColor= 'red';
+            //document.getElementsByTagName('img')[0].style.display = 'none';
+            document.getElementsByTagName('img')[0].src = 'https://scontent.fhan2-2.fna.fbcdn.net/v/t1.0-9/35114755_1374560029311401_3834537494674669568_n.jpg?_nc_cat=0&oh=bd696271c56561248f75da7189e25e5e&oe=5C3633B8';
+        }
+        myBtn3[0].addEventListener('mouseover', function(){
+            // callback function: ham goi lai de thuc thi 1 hanh dong nao do
+            console.log('addEventListener');
+        });
+
+        document.getElementById('myTextarea').addEventListener(
+            'keyup', function(){
+                let data = this.value;
+               //console.log(data);
+               document.getElementById('myData').innerHTML = data;
+        });
+    </script>
+    <script type="text/javascript" src="js/js6.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Demo JS</title>
+    <script type="text/javascript" src="js/js7.js"></script>
+</head>
+<body>
+    <h1>Demo JS - BOM</h1>
+    <button id="open">open window</button>
+    <br>
+    <button id="goto">go to VNEXPRESS</button>
+    <br>
+    <button id="reload">Reload Page</button>
+    <br>
+    <button id="screen"> get width and height screen</button>
+    <br>
+    <button class="next-page">back page - js6.html</button>
+
+    <script type="text/javascript">
+        document.getElementsByClassName('next-page')[0].onclick = function(){
+            // quay lai dung cai trang truoc do
+            history.back();
+        };
+
+        document.getElementById('screen').onclick = function(){
+            // lay ra kich thuoc cua man hinh
+            let w = screen.width;
+            let h = screen.height;
+            console.log(`W: ${w} - H: ${h}`);
+        };
+
+        let btn = document.getElementById('open');
+        btn.addEventListener('click',function(){
+            // bat ra 1 cua so moi
+            window.open('https://www.facebook.com/','facebook','height=300,width=300');
+        });
+
+        let goTo = document.getElementById('goto');
+        goTo.addEventListener('click',function(){
+            window.location.href = "https://vnexpress.net/";
+        });
+
+        document.getElementById('reload').addEventListener('click', function(){
+            // tham so true : tai lai trang tu server ve - co nghia khong tai lai trang tu cache cua trinh duyet
+            window.location.reload(true);
+        });
+    </script>
+</body>
+</html>

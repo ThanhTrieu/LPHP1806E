@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EX JS</title>
+</head>
+<body>
+    <table width="100%" border="1" cellpadding="0" cellspacing="0">
+        <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" name="all" id="all">
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Image
+                </th>
+                <th>
+                    QTY
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Money
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input type="checkbox" name="input_1" class="item-checkbox" id="input_1" onclick="itemsCheck(this);">
+                </td>
+                <td>
+                    Iphone
+                </td>
+                <td>
+                    <img src="" alt="" width="120" height="120">
+                </td>
+                <td>
+                    <input type="number" name="qty" class="qty-pd" value="2" onchange="updatePrice(this,'1');">
+                </td>
+                <td id="p_1">
+                    10000
+                </td>
+                <td id="m_1">
+                    20000
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="input_2" class="item-checkbox" id="input_2" onclick="itemsCheck(this);">
+                </td>
+                <td>
+                    Samsung
+                </td>
+                <td>
+                    <img src="" alt="" width="120" height="120">
+                </td>
+                <td>
+                    <input type="number" name="qty" class="qty-pd" value="2">
+                </td>
+                <td>
+                    20000
+                </td>
+                <td>
+                    40000
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="input_3" class="item-checkbox" id="input_3" onclick="itemsCheck(this);">
+                </td>
+                <td>
+                    Nokia
+                </td>
+                <td>
+                    <img src="" alt="" width="120" height="120">
+                </td>
+                <td>
+                    <input type="number" name="qty" class="qty-pd" value="3">
+                </td>
+                <td>
+                    20000
+                </td>
+                <td>
+                    60000
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h1>
+        <span id="time">0</span>
+    </h1>
+    <script type="text/javascript">
+        var time = 0;
+        function countTime(){
+            // let count = setInterval(function(){
+            //     document.getElementById('time').innerHTML = time;
+
+            //     if(time == 5){
+            //         console.log('ssss')
+            //         clearInterval(count);
+            //     }
+
+            //     time++;
+            // },1000);
+            setTimeout(function(){
+                console.log(1);
+            },1000);
+        }
+        countTime();
+
+        function updatePrice(obj,num){
+            // can lay dc gia tri ma nguoi dung thay doi
+            let qty = obj.value;
+            //tinh toan lai so tien
+            //can lay dc don gia
+            let price = document.getElementById('p_'+num).innerHTML;
+            // chuyen ve so de tinh toan cho chuan
+            price = eval(price);
+            document.getElementById('m_'+num).innerHTML = (qty*price);
+        }
+        function checkInput(allCheckbox,type){
+            let countEl = allCheckbox.length;
+            for(let i = 0; i< countEl; i++){
+                allCheckbox[i].checked = type;
+            }
+        }
+
+        // bat su kien click cho nut checkbox all
+        document.getElementById('all').onclick = function(){
+            // can active - checked toan bo cac input type checkbox con lai
+            let test = document.getElementById('all').checked;
+            let allInput = document.getElementsByClassName('item-checkbox');
+            if(test)
+            {
+                // truong hop nut all dc tich chon
+                checkInput(allInput,true);
+            } else {
+                // truong hop nut all bo tich chon
+                checkInput(allInput,false);
+            }
+        }
+
+        // bat su kien click cho nut check con
+        function itemsCheck(obj){
+            //console.log(obj);
+            if(!obj.checked){
+                document.getElementById('all').checked = false;
+            } else {
+                let allItemsInput = document.getElementsByClassName('item-checkbox');
+                let flag = true;
+                for(let j = 0; j < allItemsInput.length; j++){
+                    if(!allItemsInput[j].checked){
+                        flag = false;
+                        break;
+                    }
+                }
+                if(flag){
+                    document.getElementById('all').checked = true;
+                } else {
+                    document.getElementById('all').checked = false;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

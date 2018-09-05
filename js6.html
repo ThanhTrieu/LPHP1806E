@@ -60,7 +60,14 @@
         <button type="button" id="login"> login</button>
     </form>
 
+    <br><br>
+    <button id="next">Next page Js7.html</button>
+
     <script type="text/javascript">
+        document.getElementById('next').onclick = function(){
+            history.forward();
+            //window.location.href = 'js7.html';
+        }
         document.getElementById('login').addEventListener('click',function(){
             // kiem tra xem nguoi dung nhap dl vao cac o text chua?
             let user = document.getElementById('username').value;

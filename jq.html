@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Demo JQ</title>
+    <!-- nhung thu vien JQ vao website -->
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <!-- sau nay file JQuery se nen duoc nhung dau tien nhat tren moi file js -->
+    <!-- <script type="text/javascript" src="js/js1.js"></script> -->
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+</head>
+<body>
+
+    <button id="btn"> Click me</button>
+    <img src="images/demo.jpg" alt="test">
+    <h2 class="title"> PHP1806E </h2>
+    <h1> This is Test </h1>
+    <input type="text" name="username">
+
+    <button id="myBtn"> Click Me2 </button>
+    <div class="box" style="padding: 10px; border:2px solid red;">
+        <h3>This is box</h3>
+    </div>
+    <ul>
+        <li>AAAAAAA</li>
+        <li>BBBBBBB</li>
+        <li>CCCCCCC</li>
+        <li>DDDDDDD</li>
+        <li>EEEEEEE</li>
+    </ul>
+
+    <input type="checkbox" name="user">
+    <section>
+        <nav>
+            <div class="nav">
+                <p>This is nav</p>
+            </div>
+            <div class="content">
+                <h3>This is content</h3>
+            </div>
+             <div class="main">
+                <h3>This is main</h3>
+            </div>
+        </nav>
+    </section>
+
+    <div id="b-1" style="width:200px; height:200px; border:1px solid red;">
+
+    </div>
+
+    <!-- viet su kien click voi JQ -->
+    <script type="text/javascript">
+        $(function(){
+            // ham khoi tao JQ - cho doi load hay tai xong cac ma HTML thi cac doan code JQ moi dc thuc thi
+            // sau nay toan bo code phai nam gon trong ham nay
+            // $ = JQuery
+            // bat su kien click
+            // document.getElementById('btn').onclick = function(){};
+            //$('#btn') = document.getElementById('btn');
+            $('#myBtn').click(function(){
+                // document.getElementsByClassName('box')[0].style.width = '500px';
+                // document.getElementsByClassName('box')[0].style.height = '500px';
+                // document.getElementsByClassName('box')[0].style.backgroundColor = 'yellow';
+                // single css JQ
+                // $('div.box').css('width','500px');
+                // $('div.box').css('height','500px');
+                // $('div.box').css('background-color','blue');
+                // mutli css JQ
+                $('div.box').css({
+                    width: '500px',
+                    height: '500px',
+                    backgroundColor: 'green'
+                });
+                // lay ra kich thuoc cua phan tu div.box do
+                let w = $('div.box').width();
+                let h = $('div.box').height();
+                console.log(w,h);
+                $('div.box').width(300);
+                $('div.box').height(300);
+                let w2 = $('div.box').width();
+                let h2 = $('div.box').height();
+                console.log(w2,h2);
+                let w3 = $('div.box').innerWidth();
+                let h3 = $('div.box').innerHeight();
+                console.log(w3, h3);
+
+                $('ul li').eq(2).css('color','blue');
+                // let test = $('ul li').eq(2);
+                // test.css('color','blue');
+                if($('input[type="checkbox"]').is(':checked')){
+                    console.log('ban vua tich chon');
+                } else {
+                    console.log('ban vua bo tich chon');
+                }
+
+                $('section').find('nav > div.nav p').css('color','red');
+                $('section').find('nav > div.nav').next().next().css({
+                    width: '100px',
+                    height: '100px',
+                    backgroundColor: 'green'
+                });
+
+                $('div.main').prev().prev().css({
+                    width: '100px',
+                    height: '100px',
+                    backgroundColor: 'black'
+                });
+                $('div.main').parent().parent().parent().css({
+                    width: '100px',
+                    height: '100px',
+                    backgroundColor: 'red'
+                });
+                let html = $('h2').html('LANDROID');
+                console.log($('h2').html());
+                // xoa noi dung nam trong the
+                $('h2').empty();
+                // xoa ca the h2 luon
+                $('h2').remove();
+
+                //$('#b-1').fadeIn(5000);
+                //$('#b-1').show(5000);
+                //$('#b-1').slideDown(5000);
+                //$('#b-1').toggle(5000);
+                //$('#b-1').slideToggle(5000);
+                $('#b-1').fadeToggle(6000);
+            });
+
+            $('#btn').click(function(){
+                // an cai div co id : b-1 di
+                //$('#b-1').fadeOut(5000);
+                //$('#b-1').hide(5000);
+                $('#b-1').slideUp(5000);
+                //alert('hello word');
+                // lay gia tri cua thuoc tinh src trong image
+                let src = $('img').prop('src');
+                let src2 = $('img').attr('src');
+                console.log(src, src2);
+                // xoa bo di thuoc tinh cua phan tu nao do
+                $('img').removeAttr('src');
+                // kiem tra 1 phan tu nao co ton tai gia tri cua thuoc tinh class hay ko?
+                if($('h2').hasClass('title')){
+                    console.log('Yes');
+                    // xoa luon chinh cai class do
+                    $('h2').removeClass('title');
+                } else {
+                    console.log('No');
+                    // them class
+                    $('h2').addClass('title');
+                }
+
+                $('h1').toggleClass('myTitle');
+
+                let data = document.getElementsByTagName('input')[0].value;
+                console.log(data);
+                //let data2 = $('input').val().trim();
+                let data2 = $.trim($('input').val());
+                console.log(data2);
+                $('input').val('Hello you');
+                let data3 = $.trim($('input').val());
+                console.log(data3);
+            });
+            //document.getElementById('btn').addEventListener('click', function(){
+            //});
+
+        });
+    </script>
+</body>
+</html>
